@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pr_4_departure/screens/controller/provider.dart';
+import 'package:pr_4_departure/screens/splashscreen/splash.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -20,17 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: ListView.builder(
-          itemCount: Provider.of<ProviderParsing>(context).objectList.length,
-          itemBuilder: (context, index) => ListTile(
-            title: Text(Provider.of<ProviderParsing>(context)
-                .objectList[index]
-                .hindi
-                .toString()),
-          ),
-        ),
-      ),
+      home: SplashScreen()
     );
   }
 }
